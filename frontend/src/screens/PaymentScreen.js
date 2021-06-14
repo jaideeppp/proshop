@@ -14,7 +14,7 @@ function PaymentScreen({ history }) {
         history.push('/shipping')
     }
 
-    const [paymentMethod, setPaymentMethod] = useState('PayPal');
+    const [paymentMethod, setPaymentMethod] = useState('Paypal');
 
     const dispatch = useDispatch();
 
@@ -31,7 +31,6 @@ function PaymentScreen({ history }) {
             <CheckoutStep step1 step2 step3 />
             <h1>Payment Method</h1>
             <Form onSubmit={submitHandler}>
-
                 <Form.Group>
                     <Form.Group>
                         <Form.Label as="legand">
@@ -49,15 +48,13 @@ function PaymentScreen({ history }) {
                             onChange={(e) => setPaymentMethod(e.target.value)} />
                         <Form.Check
                             type="radio"
-                            label="Stripe"
-                            id="Stripe"
+                            label="Cash On Delivery(COD)"
+                            id="COD"
                             name="paymentMethod"
-                            value="Stripe"
+                            value="COD"
                             onChange={(e) => setPaymentMethod(e.target.value)} />
-
                     </Col>
                 </Form.Group>
-
                 <Button type="submit" variant="primary" onClick={submitHandler}>
                     Continue
                 </Button>
